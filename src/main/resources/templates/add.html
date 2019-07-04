@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+<div style="margin-left: 500px; margin-top : 100px; margin-right: 200px; float:center;">
+<form action="#" method="post" th:action="@{/product/simpan}" th:object="${product}">
+<table>
+	<tr>
+	<td>Brand Id</td>
+	<td>:<input type="text" th:field="*{brandId}"/></td>
+	</tr>
+	<tr>
+	<td>Name</td>
+	<td>:<input type="text" th:field="*{name}"/></td>
+	</tr>
+	<tr>
+	<td>Price </td>
+	<td>:<input type="text" th:field="*{price}"/></td>
+	</tr>
+	<tr>
+	<td>Type </td>
+	<td>:<input type="text" th:field="*{type}"/></td>
+	</tr>
+  </table>
+  <input type="submit" value="Simpan"/>
+</form>
+</div> 
+</body>
+</html>
