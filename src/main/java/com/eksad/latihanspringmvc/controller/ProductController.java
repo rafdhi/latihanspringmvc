@@ -34,6 +34,23 @@ public class ProductController {
 
 		return "add";
 	}
+	
+	@RequestMapping("/delete")
+	public String deleteProduct(Long id) {
+		productRepositoryDAO.delete(id);
+		return "delete";
+	}
+	
+	@RequestMapping(value = "/edit", method = RequestMethod.POST)
+	public String editProduct(Long brandId,String name, Integer price, String type) {
+	Product product = productRepositoryDAO.findById();
+	product.setBrandId(2L);
+	product.setName(name);
+	product.setPrice(price);
+	product.setType(type);
+	productRepositoryDAO.save(product);
+		return "edit";
+	}
 
 	@RequestMapping(value = "/simpan", method = RequestMethod.POST)
 	public String simpan(@ModelAttribute Product product) {
